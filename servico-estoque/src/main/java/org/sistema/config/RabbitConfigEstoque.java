@@ -16,18 +16,14 @@ public class RabbitConfigEstoque {
         return new Queue(FILA_ESTOQUE, true);
     }
 
-    /**
-     * Define o MessageConverter com a Lista de Classes Permitidas (Allowed List).
-     * Isso é necessário para usar serialização Java segura (Serializable).
-     */
+
     @Bean
     public MessageConverter messageConverter() {
         SimpleMessageConverter converter = new SimpleMessageConverter();
         
-        // Adiciona as classes necessárias para deserialização:
         converter.addAllowedListPatterns(
-            "java.util.ArrayList",      // Necessário para a lista de itens (List<ItemDTO>)
-            "org.sistema.dto.*"         // Permite todos os DTOs do seu projeto (PedidoDTO, ItemDTO)
+            "java.util.ArrayList",      
+            "org.sistema.dto.*"        
         );
 
         return converter;

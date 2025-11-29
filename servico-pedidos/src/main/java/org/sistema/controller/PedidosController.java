@@ -14,7 +14,7 @@ public class PedidosController {
     private PedidosPublisher publisher;
 
     @PostMapping("/enviar")
-    public String enviarPedido(@RequestBody PedidoDTO pedido) { //Ajuste pro tipo tipado -
+    public String enviarPedido(@RequestBody PedidoDTO pedido) { 
         publisher.enviarPedido(pedido);
         return "Pedido enviado com sucesso!";
     }
