@@ -4,22 +4,24 @@ import java.io.Serializable;
 
 public class ItemDTO implements java.io.Serializable   {
 
-    private int produtoId;
+    private static final long serialVersionUID = 1L;
+    
+    private Long produtoId;
     private int quantidade;
 
     public ItemDTO() {
     }
 
-    public ItemDTO(int produtoId, int quantidade) {
+    public ItemDTO(Long produtoId, int quantidade) {
         this.produtoId = produtoId;
         this.quantidade = quantidade;
     }
 
-    public int getProdutoId() {
+    public Long getProdutoId() {
         return produtoId;
     }
 
-    public void setProdutoId(int produtoId) {
+    public void setProdutoId(Long produtoId) {
         this.produtoId = produtoId;
     }
 

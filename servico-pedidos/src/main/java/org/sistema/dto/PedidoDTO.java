@@ -3,17 +3,29 @@ package org.sistema.dto;
 import java.util.List;
 import java.io.Serializable;
 
-public class PedidoDTO implements java.io.Serializable   {
+public class PedidoDTO implements java.io.Serializable {
 
+    private static final long serialVersionUID = 1L;
+
+    private Long id; 
     private String cliente;
     private List<ItemDTO> itens;
 
     public PedidoDTO() {
     }
 
-    public PedidoDTO(String cliente, List<ItemDTO> itens) {
+    public PedidoDTO(Long id, String cliente, List<ItemDTO> itens) {
+        this.id = id;
         this.cliente = cliente;
         this.itens = itens;
+    }
+    
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getCliente() {
@@ -35,8 +47,9 @@ public class PedidoDTO implements java.io.Serializable   {
     @Override
     public String toString() {
         return "PedidoDTO{" +
-                "cliente='" + cliente + '\'' +
+                "id=" + id +  
+                ", cliente='" + cliente + '\'' +
                 ", itens=" + itens +
                 '}';
     }
-}
+}  

@@ -1,9 +1,8 @@
 package org.sistema.controller;
 
-import org.sistema.messaging.PedidosPublisher;
+import org.sistema.service.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import org.sistema.dto.PedidoDTO;
 
 @RestController
@@ -11,11 +10,11 @@ import org.sistema.dto.PedidoDTO;
 public class PedidosController {
 
     @Autowired
-    private PedidosPublisher publisher;
+    private PedidoService pedidoService;
 
     @PostMapping("/enviar")
-    public String enviarPedido(@RequestBody PedidoDTO pedido) { 
-        publisher.enviarPedido(pedido);
-        return "Pedido enviado com sucesso!";
+    public String criarPedido(@RequestBody PedidoDTO pedido) { 
+        pedidoService.criarEPublicarPedido(pedido);
+        return "Pedido recebido com sucesso! ID: " + pedido.getId() + ". Aguardando confirmação do estoque.";
     }
 }
