@@ -9,6 +9,7 @@ public class PedidoDTO implements java.io.Serializable {
     
     private Long id; 
     private String cliente;
+    private String status;
     private List<ItemDTO> itens;
 
     public PedidoDTO() {
@@ -36,6 +37,14 @@ public class PedidoDTO implements java.io.Serializable {
         this.cliente = cliente;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public List<ItemDTO> getItens() {
         return itens;
     }
@@ -47,8 +56,9 @@ public class PedidoDTO implements java.io.Serializable {
     @Override
     public String toString() {
         return "PedidoDTO{" +
-                "id=" + id +  
+                "id=" + id +
                 ", cliente='" + cliente + '\'' +
+                ", status='" + status + '\'' +
                 ", itens=" + itens +
                 '}';
     }
