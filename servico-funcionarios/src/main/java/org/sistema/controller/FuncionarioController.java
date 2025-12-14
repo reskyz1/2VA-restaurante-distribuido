@@ -37,4 +37,7 @@ public class FuncionarioController {
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
     }
+
+
+
 }

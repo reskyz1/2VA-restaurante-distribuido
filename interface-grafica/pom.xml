@@ -9,7 +9,6 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <!-- usa Java 17 que é o mais comum nas máquinas da galera -->
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -48,13 +47,12 @@
 
     <build>
         <plugins>
-            <!-- plugin que cuida do module-path, natives etc -->
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
                 <configuration>
-                    <!-- sua classe principal JavaFX -->
+                    <!-- classe principal JavaFX -->
                     <mainClass>org.sistema.AppInterface</mainClass>
                 </configuration>
             </plugin>

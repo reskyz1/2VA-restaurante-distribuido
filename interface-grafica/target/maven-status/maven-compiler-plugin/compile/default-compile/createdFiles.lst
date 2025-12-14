@@ -1,5 +1,5 @@
-org\sistema\http\PedidosClient.class
-org\sistema\dto\ItemDTO.class
 org\sistema\AppInterface.class
 org\sistema\dto\PedidoDTO.class
 org\sistema\http\PedidosClient$1.class
+org\sistema\http\PedidosClient.class
+org\sistema\dto\ItemDTO.class

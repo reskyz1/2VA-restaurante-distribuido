@@ -15,16 +15,18 @@ public class Funcionario {
     private String nome;
     private String email;
     private String senha;
-    private String papel; // "GERENTE", "ESTOQUISTA", "VENDEDOR"
+    private String papel;      
+    private boolean ativo = true;  
 
     public Funcionario() {
     }
 
-    public Funcionario(String nome, String email, String senha, String papel) {
+    public Funcionario(String nome, String email, String senha, String papel, boolean ativo) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
         this.papel = papel;
+        this.ativo = ativo;
     }
 
     public Long getId() {
@@ -61,5 +63,13 @@ public class Funcionario {
 
     public void setPapel(String papel) {
         this.papel = papel;
+    }
+
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
     }
 }
